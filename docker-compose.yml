@@ -11,4 +11,3 @@ services:
       - "80:5001"
     restart: unless-stopped
     container_name: bitflow
-    network_mode: host
