@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  bitflow:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: secretanry/bitflow_back
+    ports:
+      - "80:5001"
+    restart: unless-stopped
+    container_name: bitflow
+    network_mode: host
