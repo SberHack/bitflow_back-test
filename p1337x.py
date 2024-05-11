@@ -24,7 +24,7 @@ class py1337x():
         query = '+'.join(query.split())
         category = category.upper() if category and category.lower() in ['xxx', 'tv'] else category.capitalize() if category else None
         url = f"{self.baseUrl}/{'sort-' if sortBy else ''}{'category-' if category else ''}search/{query}/{category+'/' if category else ''}{sortBy.lower()+'/' if sortBy else ''}{order.lower()+'/' if sortBy else ''}{page}/"
-
+        print(url)
         response = self.requests.get(url, headers=self.headers)
         return parser.torrentParser(response, baseUrl=self.baseUrl, page=page)
 
