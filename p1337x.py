@@ -26,6 +26,7 @@ class py1337x():
         url = f"{self.baseUrl}/{'sort-' if sortBy else ''}{'category-' if category else ''}search/{query}/{category+'/' if category else ''}{sortBy.lower()+'/' if sortBy else ''}{order.lower()+'/' if sortBy else ''}{page}/"
         print(url)
         response = self.requests.get(url, headers=self.headers)
+        print(response.text)
         return parser.torrentParser(response, baseUrl=self.baseUrl, page=page)
 
     #: Trending torrents
