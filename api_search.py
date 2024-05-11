@@ -22,6 +22,11 @@ async def get_info():
     a = search_engine.info(link=link)
     return jsonify(a), 200
 
+@app.route('/health', methods=['GET'])
+async def get_info():
+    a = "Hey!"
+    return jsonify(a), 200
+
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', port=5001, debug=True)
